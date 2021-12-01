@@ -99,7 +99,7 @@ public class Registro {
 
             String query = "SELECT idproducto, nombreProd, precio, descripcion FROM producto WHERE idproducto=?";
             PreparedStatement stmt = cnx.prepareStatement(query);
-            stmt.setInt(1, producto.getIdproducto());
+            stmt.setInt(1, idproducto);
             
             ResultSet rs = stmt.executeQuery();
             
