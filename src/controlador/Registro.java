@@ -26,7 +26,7 @@ public class Registro {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
 
-            String query = "UPDATE producto set nombreProd =?, precio =?, descripcion=? WHERE idproducto =?";
+            String query = "INSERT INTO producto(idproducto, nombreProd, precio, descripcion) VALUES(?,?,?,?)";
             PreparedStatement stmt = cnx.prepareStatement(query);
             stmt.setString(1, producto.getNombreProd());
             stmt.setInt(2, producto.getPrecio());
@@ -51,7 +51,7 @@ public class Registro {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
 
-            String query = "INSERT INTO producto(idproducto, nombreProd, precio, descripcion) VALUES(?,?,?,?)";
+            String query = "UPDATE producto set nombreProd =?, precio =?, descripcion=? WHERE idproducto =?";
             PreparedStatement stmt = cnx.prepareStatement(query);
             stmt.setInt(1, producto.getIdproducto());
             stmt.setString(2, producto.getNombreProd());
