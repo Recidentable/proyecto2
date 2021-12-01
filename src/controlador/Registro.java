@@ -146,4 +146,26 @@ public class Registro {
         }
         return lista;
     }
+    
+    public boolean verificarId(){
+        Producto producto = new Producto();
+        try {
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+
+            String query = "SELECT idproducto FROM producto WHERE idproducto=?";
+            PreparedStatement stmt = cnx.prepareStatement(query);
+            stmt.setInt(1, producto.getIdproducto());
+
+            stmt.close();
+            cnx.close();
+            
+            return true;
+            
+        } catch (Exception e) {
+            
+            return false;
+        }
+    
+    }
 }
