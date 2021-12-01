@@ -28,10 +28,10 @@ public class Registro {
 
             String query = "INSERT INTO producto(idproducto, nombreProd, precio, descripcion) VALUES(?,?,?,?)";
             PreparedStatement stmt = cnx.prepareStatement(query);
-            stmt.setString(1, producto.getNombreProd());
-            stmt.setInt(2, producto.getPrecio());
-            stmt.setString(3, producto.getDescripcion());
-            stmt.setInt(4, producto.getIdproducto());
+            stmt.setInt(1, producto.getIdproducto());
+            stmt.setString(2, producto.getNombreProd());
+            stmt.setInt(3, producto.getPrecio());
+            stmt.setString(4, producto.getDescripcion());
 
             stmt.executeUpdate();
             stmt.close();
