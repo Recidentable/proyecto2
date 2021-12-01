@@ -6,6 +6,7 @@ package vistas;
 
 import controlador.Registro;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Producto;
 
@@ -38,6 +39,9 @@ public class Listar extends javax.swing.JFrame {
         jbtn_buscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtbl_datos = new javax.swing.JTable();
+        jbtn_salir = new javax.swing.JButton();
+        jbtn_limpiar = new javax.swing.JButton();
+        jbtn_eliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,6 +89,30 @@ public class Listar extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jtbl_datos);
 
+        jbtn_salir.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jbtn_salir.setText("Salir");
+        jbtn_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_salirActionPerformed(evt);
+            }
+        });
+
+        jbtn_limpiar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jbtn_limpiar.setText("Limpiar");
+        jbtn_limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_limpiarActionPerformed(evt);
+            }
+        });
+
+        jbtn_eliminar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jbtn_eliminar.setText("Eliminar");
+        jbtn_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_eliminarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -95,15 +123,24 @@ public class Listar extends javax.swing.JFrame {
                         .addGap(161, 161, 161)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(jLabel2)
-                        .addGap(30, 30, 30)
-                        .addComponent(jtxt_idbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(jbtn_buscar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGap(42, 42, 42)
+                                        .addComponent(jtxt_idbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(28, 28, 28)
+                                        .addComponent(jbtn_limpiar)))
+                                .addGap(45, 45, 45)
+                                .addComponent(jbtn_buscar)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jbtn_eliminar)
+                                    .addComponent(jbtn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -113,12 +150,17 @@ public class Listar extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(39, 39, 39)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
+                .addGap(101, 101, 101)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbtn_buscar)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtxt_idbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(167, Short.MAX_VALUE))
+                    .addComponent(jbtn_buscar)
+                    .addComponent(jbtn_eliminar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtn_salir)
+                    .addComponent(jbtn_limpiar))
+                .addGap(30, 30, 30))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -170,6 +212,31 @@ public class Listar extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jbtn_buscarActionPerformed
 
+    private void jbtn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_salirActionPerformed
+        dispose();
+    }//GEN-LAST:event_jbtn_salirActionPerformed
+
+    private void jbtn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_limpiarActionPerformed
+        DefaultTableModel modelo= (DefaultTableModel) this.jtbl_datos.getModel();
+        modelo.setRowCount(0);
+    }//GEN-LAST:event_jbtn_limpiarActionPerformed
+
+    private void jbtn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_eliminarActionPerformed
+        int id;
+        id = Integer.parseInt(this.jtxt_idbuscar.getText());
+        Registro reg= new Registro();
+        
+        int  opcion = JOptionPane.showConfirmDialog(this,"Seguro que deseas Eliminar un producto?","Advertencia",0);
+        if(opcion==0){
+            reg.eliminarProducto(id);
+            JOptionPane.showMessageDialog(this,"Producto eliminado", "Exito", 3);
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"Producto NO eliminado", "Exito", 2);
+        }
+            
+    }//GEN-LAST:event_jbtn_eliminarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -211,6 +278,9 @@ public class Listar extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbtn_buscar;
+    private javax.swing.JButton jbtn_eliminar;
+    private javax.swing.JButton jbtn_limpiar;
+    private javax.swing.JButton jbtn_salir;
     private javax.swing.JTable jtbl_datos;
     private javax.swing.JTextField jtxt_idbuscar;
     // End of variables declaration//GEN-END:variables

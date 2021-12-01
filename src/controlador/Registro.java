@@ -70,7 +70,8 @@ public class Registro {
         }
     }
 
-    public boolean eliminarProducto(Producto producto) {
+    public boolean eliminarProducto(int idProducto) {
+        Producto producto = new Producto();
         try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
