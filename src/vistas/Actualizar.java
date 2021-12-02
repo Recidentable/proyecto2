@@ -5,6 +5,7 @@
 package vistas;
 
 import controlador.Registro;
+import javax.swing.JOptionPane;
 import modelo.Producto;
 
 /**
@@ -19,7 +20,7 @@ public class Actualizar extends javax.swing.JFrame {
      */
     public Actualizar() {
         initComponents();
-        this.jtxt_id.setEditable(false);
+        this.jtxt_id.setEditable(true);
         this.jtxt_nombre.setEditable(false);
         this.jtxt_precio.setEditable(false);
         this.jtxt_descripcion.setEditable(false);
@@ -121,6 +122,11 @@ public class Actualizar extends javax.swing.JFrame {
         });
 
         jbtn_limpiar.setText("Limpiar");
+        jbtn_limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_limpiarActionPerformed(evt);
+            }
+        });
 
         jbtn_buscar.setText("Buscar");
         jbtn_buscar.addActionListener(new java.awt.event.ActionListener() {
@@ -230,12 +236,21 @@ public class Actualizar extends javax.swing.JFrame {
     }//GEN-LAST:event_jtxt_nombreActionPerformed
 
     private void jbtn_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_actualizarActionPerformed
+        int id,precio;
+        String nombre,descripcion;
         
+        id = Integer.parseInt(this.jtxt_id.getText());
+        nombre = this.jtxt_nombre.getText();
+        precio =Integer.parseInt(this.jtxt_precio.getText());
+        descripcion=this.jtxt_descripcion.getText();
         
+        Producto producto = new Producto(precio, nombre, precio, descripcion);
+        reg.actualizarProducto(producto);
+        JOptionPane.showMessageDialog(this, "Producto Actualizado","Exito", 2);
     }//GEN-LAST:event_jbtn_actualizarActionPerformed
 
     private void jtxt_idFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtxt_idFocusGained
-        this.jtxt_id.setText("");
+        
     }//GEN-LAST:event_jtxt_idFocusGained
 
     private void jtxt_nombreFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtxt_nombreFocusGained
@@ -276,6 +291,13 @@ public class Actualizar extends javax.swing.JFrame {
         this.jtxt_descripcion.setText(descripcion);
         
     }//GEN-LAST:event_jbtn_buscarActionPerformed
+
+    private void jbtn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_limpiarActionPerformed
+        this.jtxt_id.setText("");
+        this.jtxt_nombre.setText("");
+        this.jtxt_precio.setText("");
+        this.jtxt_descripcion.setText("");
+    }//GEN-LAST:event_jbtn_limpiarActionPerformed
 
     /**
      * @param args the command line arguments
