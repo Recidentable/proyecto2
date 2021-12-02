@@ -31,7 +31,6 @@ public class Menu extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jmi_agregar = new javax.swing.JMenuItem();
         jmi_actualizar = new javax.swing.JMenuItem();
-        jmi_eliminar = new javax.swing.JMenuItem();
         jmi_listar = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jmi_salir = new javax.swing.JMenuItem();
@@ -60,17 +59,9 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu3.add(jmi_actualizar);
 
-        jmi_eliminar.setText("Eliminar");
-        jmi_eliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmi_eliminarActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jmi_eliminar);
-
         jMenu1.add(jMenu3);
 
-        jmi_listar.setText("Listar");
+        jmi_listar.setText("Listar/Eliminar");
         jmi_listar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmi_listarActionPerformed(evt);
@@ -115,10 +106,6 @@ public class Menu extends javax.swing.JFrame {
     private void jmi_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_actualizarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jmi_actualizarActionPerformed
-
-    private void jmi_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_eliminarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jmi_eliminarActionPerformed
 
     private void jmi_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_salirActionPerformed
         System.exit(0);
@@ -176,7 +163,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JMenuItem jmi_actualizar;
     private javax.swing.JMenuItem jmi_agregar;
-    private javax.swing.JMenuItem jmi_eliminar;
     private javax.swing.JMenuItem jmi_listar;
     private javax.swing.JMenuItem jmi_salir;
     // End of variables declaration//GEN-END:variables

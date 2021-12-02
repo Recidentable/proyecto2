@@ -71,14 +71,14 @@ public class Registro {
     }
 
     public boolean eliminarProducto(int idProducto) {
-        Producto producto = new Producto();
+//        Producto producto = new Producto();
         try {
             Conexion con = new Conexion();
             Connection cnx = con.obtenerConexion();
 
-            String query = "DELETE FROM produto WHERE idproducto=?";
+            String query = "DELETE FROM producto WHERE idproducto=?";
             PreparedStatement stmt = cnx.prepareStatement(query);
-            stmt.setInt(1, producto.getIdproducto());
+            stmt.setInt(1, idProducto);
 
             stmt.executeUpdate();
             stmt.close();
