@@ -104,7 +104,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmi_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_actualizarActionPerformed
-        // TODO add your handling code here:
+        new Actualizar().setVisible(true);
     }//GEN-LAST:event_jmi_actualizarActionPerformed
 
     private void jmi_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_salirActionPerformed
