@@ -148,6 +148,62 @@ public class Registro {
         return lista;
     }
     
+    public List<Producto> buscarNombre() {
+        List<Producto> lista = new ArrayList<>();
+        try {
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+
+            String query = "SELECT idproducto, nombreProd, precio, descripcion FROM producto ORDER BY nombreProd ASC";
+            PreparedStatement stmt = cnx.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Producto producto = new Producto();
+                producto.setIdproducto(rs.getInt("idproducto"));
+                producto.setNombreProd(rs.getString("nombreProd"));
+                producto.setPrecio(rs.getInt("precio"));
+                producto.setDescripcion(rs.getString("descripcion"));
+                lista.add(producto);
+            }
+            rs.close();
+            stmt.close();
+            cnx.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error al listar productos - Clase producto" + e.getMessage());
+        }
+        return lista;
+    }
+
+    public List<Producto> buscarPrecio() {
+        List<Producto> lista = new ArrayList<>();
+        try {
+            Conexion con = new Conexion();
+            Connection cnx = con.obtenerConexion();
+
+            String query = "SELECT idproducto, nombreProd, precio, descripcion FROM producto ORDER BY precio DESC";
+            PreparedStatement stmt = cnx.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Producto producto = new Producto();
+                producto.setIdproducto(rs.getInt("idproducto"));
+                producto.setNombreProd(rs.getString("nombreProd"));
+                producto.setPrecio(rs.getInt("precio"));
+                producto.setDescripcion(rs.getString("descripcion"));
+                lista.add(producto);
+            }
+            rs.close();
+            stmt.close();
+            cnx.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error al listar productos - Clase producto" + e.getMessage());
+        }
+        return lista;
+    }
+    
     public boolean verificarId(){
         Producto producto = new Producto();
         try {

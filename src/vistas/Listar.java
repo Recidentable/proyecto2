@@ -32,6 +32,8 @@ public class Listar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -42,8 +44,11 @@ public class Listar extends javax.swing.JFrame {
         jbtn_salir = new javax.swing.JButton();
         jbtn_limpiar = new javax.swing.JButton();
         jbtn_eliminar = new javax.swing.JButton();
+        jchk_nombre = new javax.swing.JCheckBox();
+        jchk_precio = new javax.swing.JCheckBox();
+        jLabel3 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 255, 51));
 
@@ -113,6 +118,15 @@ public class Listar extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(jchk_nombre);
+        jchk_nombre.setText("Nombre");
+
+        buttonGroup1.add(jchk_precio);
+        jchk_precio.setText("Precio");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setText("Filtrar por:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -125,23 +139,32 @@ public class Listar extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGap(28, 28, 28)
+                                .addComponent(jbtn_limpiar)
+                                .addGap(148, 148, 148)
+                                .addComponent(jbtn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
+                                .addGap(34, 34, 34)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(42, 42, 42)
-                                        .addComponent(jtxt_idbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jtxt_idbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                                        .addComponent(jbtn_buscar)
+                                        .addGap(35, 35, 35)
+                                        .addComponent(jbtn_eliminar))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(28, 28, 28)
-                                        .addComponent(jbtn_limpiar)))
-                                .addGap(45, 45, 45)
-                                .addComponent(jbtn_buscar)
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jbtn_eliminar)
-                                    .addComponent(jbtn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(58, Short.MAX_VALUE))
+                                        .addComponent(jchk_nombre)
+                                        .addGap(38, 38, 38)
+                                        .addComponent(jchk_precio)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)))))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,10 +176,15 @@ public class Listar extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtxt_idbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtn_buscar)
-                    .addComponent(jbtn_eliminar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                    .addComponent(jbtn_eliminar)
+                    .addComponent(jtxt_idbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jchk_nombre)
+                    .addComponent(jchk_precio)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtn_salir)
                     .addComponent(jbtn_limpiar))
@@ -175,6 +203,7 @@ public class Listar extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtxt_idbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_idbuscarActionPerformed
@@ -190,10 +219,10 @@ public class Listar extends javax.swing.JFrame {
             idproducto = Integer.parseInt(this.jtxt_idbuscar.getText());
             
         } catch (NumberFormatException e) {
-            idproducto=0;
+            idproducto=-1;
         }
         modelo.setRowCount(0);
-        if(idproducto==0){
+        if(idproducto == -1 && !this.jchk_nombre.isSelected() && !this.jchk_precio.isSelected()){
             List<Producto> lista = reg.buscarTodos();
             for(Producto producto : lista){
                 idproducto=producto.getIdproducto();
@@ -202,13 +231,31 @@ public class Listar extends javax.swing.JFrame {
                 descripcion=producto.getDescripcion();
                 modelo.addRow(new Object []{idproducto,nombre,precio,descripcion});
             }           
-        }else{
+        } else if(idproducto >= 0) {
             Producto producto = reg.buscarProducto(idproducto);
             idproducto = producto.getIdproducto();
             nombre = producto.getNombreProd();
             precio = producto.getPrecio();
             descripcion = producto.getDescripcion();
             modelo.addRow(new Object[]{idproducto, nombre, precio, descripcion});
+        } else if (idproducto == -1 && this.jchk_nombre.isSelected()) {
+            List<Producto> lista = reg.buscarNombre();
+            for (Producto producto : lista) {
+                idproducto = producto.getIdproducto();
+                nombre = producto.getNombreProd();
+                precio = producto.getPrecio();
+                descripcion = producto.getDescripcion();
+                modelo.addRow(new Object[]{idproducto, nombre, precio, descripcion});
+            }
+        } else if (idproducto == -1 && this.jchk_precio.isSelected()) {
+            List<Producto> lista = reg.buscarPrecio();
+            for (Producto producto : lista) {
+                idproducto = producto.getIdproducto();
+                nombre = producto.getNombreProd();
+                precio = producto.getPrecio();
+                descripcion = producto.getDescripcion();
+                modelo.addRow(new Object[]{idproducto, nombre, precio, descripcion});
+            }
         }
     }//GEN-LAST:event_jbtn_buscarActionPerformed
 
@@ -220,6 +267,7 @@ public class Listar extends javax.swing.JFrame {
         DefaultTableModel modelo= (DefaultTableModel) this.jtbl_datos.getModel();
         modelo.setRowCount(0);
         this.jtxt_idbuscar.setText("");
+        this.buttonGroup1.clearSelection();
     }//GEN-LAST:event_jbtn_limpiarActionPerformed
 
     private void jbtn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_eliminarActionPerformed
@@ -279,14 +327,19 @@ public class Listar extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbtn_buscar;
     private javax.swing.JButton jbtn_eliminar;
     private javax.swing.JButton jbtn_limpiar;
     private javax.swing.JButton jbtn_salir;
+    private javax.swing.JCheckBox jchk_nombre;
+    private javax.swing.JCheckBox jchk_precio;
     private javax.swing.JTable jtbl_datos;
     private javax.swing.JTextField jtxt_idbuscar;
     // End of variables declaration//GEN-END:variables
