@@ -53,10 +53,10 @@ public class Registro {
 
             String query = "UPDATE producto set nombreProd =?, precio =?, descripcion=? WHERE idproducto =?";
             PreparedStatement stmt = cnx.prepareStatement(query);
-            stmt.setInt(1, producto.getIdproducto());
-            stmt.setString(2, producto.getNombreProd());
-            stmt.setInt(3, producto.getPrecio());
-            stmt.setString(4, producto.getDescripcion());
+            stmt.setString(1, producto.getNombreProd());
+            stmt.setInt(2, producto.getPrecio());
+            stmt.setString(3, producto.getDescripcion());
+            stmt.setInt(4, producto.getIdproducto());
 
             stmt.executeUpdate();
             stmt.close();

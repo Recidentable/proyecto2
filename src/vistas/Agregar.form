@@ -160,26 +160,17 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtxt_nombre">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Ingresar nombre"/>
-          </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxt_nombreFocusGained"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtxt_nombreActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jtxt_precio">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Ingresar Precio "/>
-          </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxt_precioFocusGained"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jtxt_descripcion">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Ingresar una descripcion"/>
-          </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxt_descripcionFocusGained"/>
           </Events>
@@ -209,9 +200,6 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jtxt_id">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Ingrese ID del producto"/>
-          </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtxt_idFocusGained"/>
           </Events>

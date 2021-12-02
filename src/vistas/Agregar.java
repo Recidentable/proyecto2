@@ -5,6 +5,7 @@
 package vistas;
 
 import controlador.Registro;
+import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 import modelo.Producto;
 
@@ -13,7 +14,7 @@ import modelo.Producto;
  * @author Basty
  */
 public class Agregar extends javax.swing.JFrame {
-    
+
     String mensaje = "";
 
     /**
@@ -65,7 +66,6 @@ public class Agregar extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Descripcion:");
 
-        jtxt_nombre.setText("Ingresar nombre");
         jtxt_nombre.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jtxt_nombreFocusGained(evt);
@@ -77,14 +77,12 @@ public class Agregar extends javax.swing.JFrame {
             }
         });
 
-        jtxt_precio.setText("Ingresar Precio ");
         jtxt_precio.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jtxt_precioFocusGained(evt);
             }
         });
 
-        jtxt_descripcion.setText("Ingresar una descripcion");
         jtxt_descripcion.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jtxt_descripcionFocusGained(evt);
@@ -112,7 +110,6 @@ public class Agregar extends javax.swing.JFrame {
             }
         });
 
-        jtxt_id.setText("Ingrese ID del producto");
         jtxt_id.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jtxt_idFocusGained(evt);
@@ -206,7 +203,7 @@ public class Agregar extends javax.swing.JFrame {
     }//GEN-LAST:event_jtxt_nombreActionPerformed
 
     private void jbtn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_salirActionPerformed
-        dispose();  
+        dispose();
     }//GEN-LAST:event_jbtn_salirActionPerformed
 
     private void jtxt_nombreFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtxt_nombreFocusGained
@@ -222,55 +219,58 @@ public class Agregar extends javax.swing.JFrame {
     }//GEN-LAST:event_jtxt_descripcionFocusGained
 
     private void jbtn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_agregarActionPerformed
-        String nombre,descripcion;
-        int precio=0,idproducto=0;
+        String nombre = "", descripcion = "";
+        int precio = 0, idproducto = 0;
+        Registro reg = new Registro();
         try {
             idproducto = Integer.parseInt(this.jtxt_id.getText());
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Ingrese ID válido","Validacion", 1);
+            JOptionPane.showMessageDialog(this, "Ingrese ID válido", "Validacion", 1);
             this.jtxt_id.requestFocus();
+            return;
         }
-        Registro reg = new Registro();
+
         int aux = -1;
         for (int i = 0; i < reg.buscarTodos().size(); i++) {
-            if (reg.verificarId() == true ) {
+            if (reg.verificarId() == true) {
                 mensaje = "El producto ya existe";
 //                JOptionPane.showMessageDialog(this, "El producto ya existe","Error", 1);
                 aux = i;
                 break;
             } else {
-                
+
 //                break;
             }
-            
+
         }
-        
-        
-        nombre =this.jtxt_nombre.getText();
-        if(nombre.isEmpty()){
-            JOptionPane.showMessageDialog(this, "Ingrese Nombre","Validacion", 1);
+
+        nombre = this.jtxt_nombre.getText();
+        if (nombre.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese Nombre", "Validacion", 1);
             this.jtxt_nombre.requestFocus();
-//            return;
+            return;
         }
-        try{
+        try {
             precio = Integer.parseInt(this.jtxt_precio.getText());
-        }catch (NumberFormatException e){
-            JOptionPane.showMessageDialog(this, "Precio debe ser numerico","Validacion", 1);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Precio debe ser numerico", "Validacion", 1);
             this.jtxt_precio.requestFocus();
+            return;
         }
-        descripcion=this.jtxt_descripcion.getText();
-        if(descripcion.isEmpty()){
-            JOptionPane.showMessageDialog(this,"Ingrese Descripcion", "Validacion", 1);
+        descripcion = this.jtxt_descripcion.getText();
+        if (descripcion.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese Descripcion", "Validacion", 1);
             this.jtxt_descripcion.requestFocus();
-//            return;
+            return;
         }
-        Producto producto = new Producto (idproducto, nombre, precio, descripcion);
+
+        Producto producto = new Producto(idproducto, nombre, precio, descripcion);
         if (reg.agregarProducto(producto)) {
-            JOptionPane.showMessageDialog(this,"Se agrego el producto","Exito",1);
+            JOptionPane.showMessageDialog(this, "Se agrego el producto", "Exito", 1);
         } else {
             JOptionPane.showMessageDialog(this, "No se agrego el producto, " + mensaje, "Error", 1);
         }
-        
+
     }//GEN-LAST:event_jbtn_agregarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
